@@ -16,6 +16,7 @@
             Studieprogram = studieprogram;
             StudentID = studentID;
         }
+        /*
         public Student(string name, int age, string studieprogram, int studentID, List<Karakter> startKarakterer)
         {
             Name = name;
@@ -28,7 +29,7 @@
                 LeggTilKarakter(k);
             }
         }
-
+        */
         
         public void LeggTilKarakter(Karakter karakter)
         {

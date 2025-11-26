@@ -25,7 +25,8 @@ public class Program
             Console.WriteLine("1. Vis alle studenter og karakterer");
             Console.WriteLine("2. Registrer ny karakter for student");
             Console.WriteLine("3. Rediger eksisterende karakter");
-            Console.WriteLine("4. Avslutt");
+            Console.WriteLine("4. Legg til ny student");
+            Console.WriteLine("5. Avslutt");
             Console.Write("Velg et alternativ: ");
 
             var input = Console.ReadLine();
@@ -43,6 +44,9 @@ public class Program
                     RedigerKarakter();
                     break;
                 case "4":
+                    LeggTilStudent();
+                    break;
+                case "5":
                     return;
                 default:
                     Console.WriteLine("Ugyldig valg. Trykk enter for å fortsette.");
@@ -50,6 +54,22 @@ public class Program
                     break;
             }
         }
+    }
+
+    private static void LeggTilStudent()
+    {
+        Console.Clear();
+        Console.WriteLine("--- legg til student ---");
+        Console.Write("Skriv inn navn: ");
+        string navn = Console.ReadLine();
+        Console.Write("Skriv inn alder: ");
+        int alder = int.Parse(Console.ReadLine());
+        Console.Write("Skriv inn studieprogram: ");
+        string studieprogram = Console.ReadLine();
+        Console.Write("Skriv inn student ID: ");
+        int studentID = int.Parse(Console.ReadLine());
+        Student nyStudent = new Student(navn, alder, studieprogram, studentID);
+        studenter.Add(nyStudent);
     }
 
     private static void VisStudenterOgKarakterer()
